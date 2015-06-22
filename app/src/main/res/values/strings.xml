@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AndroidL</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_collapsing_toolbar">CollapsingToolbarActivity</string>
+    <string name="title_activity_collapsing_toolbar_with_tab">CollapsingToolbarWithTabActivity
+    </string>
+    <string name="title_activity_collapsing_toolbar_with_tab_and_view_pager">
+        CollapsingToolbarWithTabAndViewPager
+    </string>
+    <string name="title_activity_collapsing_toolbar_with_flexible_view">
+        CollapsingToolbarWithFlexibleView
+    </string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android.support.design="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView
+            android:text="Others"
+            android:textAppearance="@android:style/TextAppearance.Theme"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </android.support.v7.widget.Toolbar>
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextInputLayout"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp" android:layout_marginBottom="2dp"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp" android:layout_marginBottom="2dp"
+        android.support.design:hintTextAppearance="@style/TextAppearance.AppCompat">
+        <EditText android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp" android:layout_marginBottom="2dp"
+        android.support.design:hintTextAppearance="@style/TextAppearance.AppCompat">
+        <EditText android:id="@+id/phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:inputType="phone" />
+    </android.support.design.widget.TextInputLayout>
+    <Button android:id="@+id/btn_snackbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Show Snackbar"/>
+</LinearLayout>
