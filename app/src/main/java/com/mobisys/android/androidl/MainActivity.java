@@ -13,7 +13,7 @@ import android.widget.ListView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private String[] menu = {"Drawer Navigation", "Floating Action Button (FAB)", "TabLayout", "TabLayout with ViewPager", "Collapsing Toolbar", "Collapsing Toolbar with Tab", "Collapsing Toolbar with Tab & ViewPager", "Collapsing Toolbar with Tab, ViewPager & FlexibleView", "Others","Json Parsing"};
+    private String[] menu = {"Drawer Navigation", "Floating Action Button (FAB)", "TabLayout", "TabLayout with ViewPager", "Collapsing Toolbar", "Collapsing Toolbar with Tab", "Collapsing Toolbar with Tab & ViewPager", "Collapsing Toolbar with Tab, ViewPager & FlexibleView", "Others","Json Parsing", "Image Chooser"};
     @Override
     public void onCreate(Bundle bundle){
         super.onCreate(bundle);
@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (position == 9){
                     Intent intent = new Intent(MainActivity.this, JsonParsingActivity.class);
+                    startActivity(intent);
+                }
+                else if (position == 10){
+                    Intent intent = new Intent(MainActivity.this, ChooseImagesActivity.class);
                     startActivity(intent);
                 }
             }
