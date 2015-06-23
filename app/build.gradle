@@ -11,6 +11,11 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -24,4 +29,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
+
+    //Retrofit related libraries
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:mockwebserver:2.4.0'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+
+    //universal image loader jar
+    compile files('libs/universal-image-loader-1.9.3-with-sources.jar')
 }
