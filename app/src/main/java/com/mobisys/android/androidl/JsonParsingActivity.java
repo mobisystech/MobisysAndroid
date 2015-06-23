@@ -100,7 +100,7 @@ public class JsonParsingActivity extends AppCompatActivity {
             View row = convertView;
             ViewHolder holder = null;
             if(row == null){
-                row = mInflater.inflate(R.layout.row_movie_list_item, null);
+                row = mInflater.inflate(R.layout.row_movie, null);
                 holder = new ViewHolder(row);
                 row.setTag(holder);
             }
