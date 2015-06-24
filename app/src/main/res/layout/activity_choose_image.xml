@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android.support.design="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView
+            android:text="Image Chooser"
+            android:textAppearance="@android:style/TextAppearance.Theme"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout android:id="@+id/image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/toolbar"
+        android:weightSum="3.0">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:padding="6dp">
+            <ImageView android:id="@+id/image_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/user_stub"/>
+            <Button android:id="@+id/btn_add_photo_1"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/add_photo"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_selector"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:padding="6dp">
+            <ImageView android:id="@+id/image_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/user_stub"/>
+            <Button android:id="@+id/btn_add_photo_2"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/add_photo"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_selector"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:padding="6dp">
+            <ImageView android:id="@+id/image_3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/user_stub"/>
+            <Button android:id="@+id/btn_add_photo_3"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/add_photo"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_selector"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button android:id="@+id/btn_upload"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/upload"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"
+        android:background="@drawable/btn_selector"/>
+</RelativeLayout>

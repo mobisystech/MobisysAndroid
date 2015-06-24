@@ -20,4 +20,8 @@
     <string name="text_view_transition">TextViewTransition</string>
     <string name="toolbar_transition">ToolbarTransition</string>
     <string name="title_activity_list_animation">ListAnimationActivity</string>
+
+    <string name="add_photo">Add Photo</string>
+    <string name="upload">Upload</string>
+    <string name="error">Error</string>
 </resources>
