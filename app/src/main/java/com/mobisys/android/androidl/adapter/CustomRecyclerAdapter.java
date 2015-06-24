@@ -15,16 +15,25 @@ import com.mobisys.android.androidl.R;
  */
 public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder> {
     private String[] mDataset;
+    private OnItemClickListener mListener;
+
+    public static interface OnItemClickListener {
+        public void onItemClick(int position, View row);
+    }
 
     public CustomRecyclerAdapter(String[] dataset){
         this.mDataset = dataset;
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mListener = listener;
+    }
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, final int position) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_recycler, viewGroup, false);
 
-        return new ViewHolder(v);
+        return new ViewHolder(v, mListener);
     }
 
     @Override
@@ -39,13 +48,15 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView textView;
+        public final OnItemClickListener mListener;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView, OnItemClickListener itemListener) {
             super(itemView);
+            this.mListener = itemListener;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d("ViewHolder", "Element " + getPosition() + " clicked.");
+                    if (mListener!=null) mListener.onItemClick(getAdapterPosition(), itemView);
                 }
             });
             textView = (TextView) itemView.findViewById(R.id.textView);

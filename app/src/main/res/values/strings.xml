@@ -14,4 +14,10 @@
     </string>
     <string name="fetch_movie_list">Fetch Movie List</string>
     <string name="loading">Loading..</string>
+    <string name="title_activity_grid_animation">GridAnimationActivity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="text_view_transition">TextViewTransition</string>
+    <string name="toolbar_transition">ToolbarTransition</string>
+    <string name="title_activity_list_animation">ListAnimationActivity</string>
 </resources>

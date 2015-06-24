@@ -66,6 +66,18 @@
             android:name=".JsonParsingActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".GridAnimationActivity"
+            android:label="@string/title_activity_grid_animation" >
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail" >
+        </activity>
+        <activity
+            android:name=".ListAnimationActivity"
+            android:label="@string/title_activity_list_animation" >
+        </activity>
     </application>
 
 </manifest>
