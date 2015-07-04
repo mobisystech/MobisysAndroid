@@ -63,7 +63,7 @@
             android:label="@string/title_activity_collapsing_toolbar_with_flexible_view" >
         </activity>
         <activity
-            android:name=".JsonParsingActivity"
+            android:name=".HttpRequestSampleActivity"
             android:label="@string/app_name" >
         </activity>
         <activity

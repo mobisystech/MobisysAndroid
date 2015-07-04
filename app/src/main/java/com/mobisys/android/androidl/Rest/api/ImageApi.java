@@ -1,12 +1,9 @@
-package com.mobisys.android.androidl.Rest.api;
+package com.mobisys.android.androidl.rest.api;
 
-import com.mobisys.android.androidl.Rest.RestCallback;
-import com.mobisys.android.androidl.data.Movie;
+import com.mobisys.android.androidl.rest.RestCallback;
 
 import retrofit.http.Body;
-import retrofit.http.GET;
 import retrofit.http.POST;
-import retrofit.http.Query;
 import retrofit.mime.MultipartTypedOutput;
 
 public interface ImageApi {

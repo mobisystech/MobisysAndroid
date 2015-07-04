@@ -1,13 +1,13 @@
-package com.mobisys.android.androidl.Rest;
+package com.mobisys.android.androidl.rest;
 
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
 
 import android.content.Context;
 
-import com.mobisys.android.androidl.Rest.api.ImageApi;
+import com.mobisys.android.androidl.rest.api.ImageApi;
 import com.mobisys.android.androidl.widget.Preferences;
-import com.mobisys.android.androidl.Rest.api.MovieApi;
+import com.mobisys.android.androidl.rest.api.MovieApi;
 import com.squareup.okhttp.OkHttpClient;
 
 public class RestClient {

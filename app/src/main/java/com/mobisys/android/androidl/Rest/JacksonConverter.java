@@ -1,9 +1,8 @@
-package com.mobisys.android.androidl.Rest;
+package com.mobisys.android.androidl.rest;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.JsonProcessingException;

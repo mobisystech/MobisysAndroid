@@ -1,18 +1,17 @@
-package com.mobisys.android.androidl.Rest.api;
+package com.mobisys.android.androidl.rest.api;
 
-import com.mobisys.android.androidl.Rest.RestCallback;
 import com.mobisys.android.androidl.data.Movie;
+import com.mobisys.android.androidl.data.MovieWrapper;
+import com.mobisys.android.androidl.rest.RestCallback;
 
-import java.util.ArrayList;
-
-import retrofit.http.Body;
 import retrofit.http.GET;
-import retrofit.http.POST;
 import retrofit.http.Query;
-import retrofit.mime.MultipartTypedOutput;
 
 public interface MovieApi {
     @GET("/movie/upcoming")
-    public void getMovieList(@Query("api_key") String api_key, RestCallback<Movie> restCallback);
+    public void getMovieList(@Query("api_key") String api_key, RestCallback<MovieWrapper> restCallback);
+
+    @GET("/movie/upcoming")
+    public Movie getMovieList(@Query("api_key") String api_key);
 
 }

@@ -13,7 +13,7 @@ import android.widget.ListView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private String[] menu = {"Drawer Navigation", "Floating Action Button (FAB)", "TabLayout", "TabLayout with ViewPager", "Collapsing Toolbar", "Collapsing Toolbar with Tab", "Collapsing Toolbar with Tab & ViewPager", "Collapsing Toolbar with Tab, ViewPager & FlexibleView", "Others","GridView with Animation","ListView with Animation","Json Parsing", "Image Chooser"};
+    private String[] menu = {"Drawer Navigation", "Floating Action Button (FAB)", "TabLayout", "TabLayout with ViewPager", "Collapsing Toolbar", "Collapsing Toolbar with Tab", "Collapsing Toolbar with Tab & ViewPager", "Collapsing Toolbar with Tab, ViewPager & FlexibleView", "Others","GridView with Animation","ListView with Animation","Http Request using Retrofit", "Image Chooser"};
 
     @Override
     public void onCreate(Bundle bundle){
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, ListAnimationActivity.class);
                     startActivity(intent);
                 } else if (position == 11){
-                    Intent intent = new Intent(MainActivity.this, JsonParsingActivity.class);
+                    Intent intent = new Intent(MainActivity.this, HttpRequestSampleActivity.class);
                     startActivity(intent);
                 }
                 else if (position == 12){

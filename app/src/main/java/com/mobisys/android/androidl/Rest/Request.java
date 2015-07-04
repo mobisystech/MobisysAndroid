@@ -1,4 +1,4 @@
-package com.mobisys.android.androidl.Rest;
+package com.mobisys.android.androidl.rest;
 
 public class Request {
 

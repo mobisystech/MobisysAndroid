@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.kbeanie.imagechooser.api.ImageChooserActivity;
-import com.mobisys.android.androidl.Rest.RestCallback;
-import com.mobisys.android.androidl.Rest.RestClient;
+import com.mobisys.android.androidl.rest.RestCallback;
+import com.mobisys.android.androidl.rest.RestClient;
 import com.mobisys.android.androidl.data.Resource;
 import com.mobisys.android.androidl.widget.AppUtil;
 import com.mobisys.android.androidl.widget.MImageLoader;
@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import retrofit.client.Response;
 import retrofit.mime.MultipartTypedOutput;
 import retrofit.mime.TypedFile;
-import retrofit.mime.TypedString;
 
 /**
  * Created by vikas on 6/23/15.

@@ -1,11 +1,7 @@
-package com.mobisys.android.androidl.Rest;
+package com.mobisys.android.androidl.rest;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import android.util.Log;
 
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,7 +16,8 @@ public abstract class RestCallback<T> implements Callback<T> {
 	@SuppressWarnings("deprecation")
 	@Override
 	public void failure(RetrofitError error) {
-		String restErrors = null;
+        Log.d("RestCallback", "error ==> "+error.toString());
+        String restErrors = null;
 		boolean networkError = false;
 		if (error.isNetworkError()) {
             restErrors = "Cannot connect to internet";

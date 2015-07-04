@@ -14,14 +14,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.mobisys.android.androidl.Rest.Request;
-import com.mobisys.android.androidl.Rest.RestCallback;
-import com.mobisys.android.androidl.Rest.RestClient;
 import com.mobisys.android.androidl.data.Movie;
-import com.mobisys.android.androidl.data.Result;
+import com.mobisys.android.androidl.data.MovieWrapper;
+import com.mobisys.android.androidl.rest.Request;
+import com.mobisys.android.androidl.rest.RestCallback;
+import com.mobisys.android.androidl.rest.RestClient;
 import com.mobisys.android.androidl.widget.MImageLoader;
 import com.mobisys.android.androidl.widget.ProgressDialog;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import retrofit.client.Response;
@@ -29,7 +30,7 @@ import retrofit.client.Response;
 /**
  * Created by vikas on 6/22/15.
  */
-public class JsonParsingActivity extends AppCompatActivity {
+public class HttpRequestSampleActivity extends AppCompatActivity {
 
     private Dialog mPg;
 
@@ -55,12 +56,12 @@ public class JsonParsingActivity extends AppCompatActivity {
     }
 
     private void fetchMovieList() {
-        mPg= ProgressDialog.show(JsonParsingActivity.this, getString(R.string.loading));
-        RestClient.getMovieApi(JsonParsingActivity.this).getMovieList(Request.API_KEY, new RestCallback<Movie>() {
+        mPg= ProgressDialog.show(HttpRequestSampleActivity.this, getString(R.string.loading));
+        RestClient.getMovieApi(HttpRequestSampleActivity.this).getMovieList(Request.API_KEY, new RestCallback<MovieWrapper>() {
             @Override
-            public void success(Movie movieObj, Response response) {
+            public void success(MovieWrapper movieWrapper, Response response) {
                 if (mPg != null && mPg.isShowing()) mPg.dismiss();
-                initList(movieObj);
+                initList(movieWrapper);
             }
 
             @Override
@@ -70,13 +71,14 @@ public class JsonParsingActivity extends AppCompatActivity {
         });
     }
 
-    private void initList(Movie movieObj) {
+    private void initList(MovieWrapper movieObj) {
         ListView list=(ListView)findViewById(R.id.list);
-        MovieListAdapter adapter=new MovieListAdapter(JsonParsingActivity.this,0,movieObj.getResults());
+        MovieListAdapter adapter=new MovieListAdapter(HttpRequestSampleActivity.this,0,movieObj.getMovies());
         list.setAdapter(adapter);
     }
 
-    private class MovieListAdapter extends ArrayAdapter<Result> {
+    private class MovieListAdapter extends ArrayAdapter<Movie> {
+        private final SimpleDateFormat SDF = new SimpleDateFormat("dd/MM/yyyy");
 
         private LayoutInflater mInflater;
         private class ViewHolder {
@@ -90,7 +92,7 @@ public class JsonParsingActivity extends AppCompatActivity {
             }
         }
 
-        public MovieListAdapter(Context context, int textViewResourceId,ArrayList<Result> objects) {
+        public MovieListAdapter(Context context, int textViewResourceId,ArrayList<Movie> objects) {
             super(context, textViewResourceId, objects);
             mInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
@@ -108,13 +110,10 @@ public class JsonParsingActivity extends AppCompatActivity {
                 holder = (ViewHolder)row.getTag();
             }
 
-            if(getItem(position).getPoster_path()!=null && getItem(position).getPoster_path().length()>0)
-                MImageLoader.displayImage(JsonParsingActivity.this, Request.IMAGE_PATH+"/"+getItem(position).getPoster_path(), holder.poster,R.drawable.user_stub);
-            else
-                MImageLoader.displayImage(JsonParsingActivity.this, null, holder.poster,R.drawable.user_stub);
-
+            MImageLoader.displayImage(HttpRequestSampleActivity.this, Request.IMAGE_PATH+"/"+getItem(position).getPoster_path(), holder.poster,R.drawable.user_stub);
             holder.title.setText(getItem(position).getTitle()+"");
-            holder.release_date.setText(getItem(position).getRelease_date()+"");
+            String date = SDF.format(getItem(position).getRelease_date());
+            holder.release_date.setText(date);
 
             return row;
         }
