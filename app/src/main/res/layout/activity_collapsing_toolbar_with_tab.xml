@@ -28,7 +28,8 @@
             app:tabMode="fixed"
             app:tabIndicatorColor="#FFFFFF"
             app:tabTextColor="#80FFFFFF"
-            app:tabSelectedTextColor="#FFFFFF"/>
+            app:tabSelectedTextColor="#FFFFFF"
+            />
     </android.support.design.widget.AppBarLayout>
 
 </android.support.design.widget.CoordinatorLayout>

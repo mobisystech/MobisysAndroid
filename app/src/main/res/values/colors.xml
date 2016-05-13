@@ -2,5 +2,6 @@
 <resources>
     <color name="main_color">#457C50</color>
     <color name="window_background">#FFF5F5F5</color>
+    <color name="bright_green">#39e16d</color>
     <color name="actionbar_gray">#f7f7f7</color>
 </resources>

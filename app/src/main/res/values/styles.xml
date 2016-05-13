@@ -8,6 +8,7 @@
 
         <!-- colorPrimaryDark is used for the status bar -->
         <item name="colorPrimaryDark">@color/main_color</item>
+        <item name="colorAccent">@color/bright_green</item>
 
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 

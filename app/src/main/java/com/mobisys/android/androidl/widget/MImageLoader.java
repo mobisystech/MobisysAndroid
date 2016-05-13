@@ -5,7 +5,7 @@ import java.io.File;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
+//import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -31,7 +31,7 @@ public class MImageLoader {
 			mImageLoader = ImageLoader.getInstance();
 			File cacheDir = StorageUtils.getOwnCacheDirectory(context, "cache_folder");
 			ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-			.discCache(new UnlimitedDiscCache(cacheDir))
+			//.discCache(new UnlimitedDiscCache(cacheDir))
 			.discCacheFileNameGenerator(new HashCodeFileNameGenerator())
 			.build();
 
